@@ -1,0 +1,330 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" class="ui-mobile"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><!-- base href="https://m.studentinsider.com/CouponDisplay.aspx?key=coupon&AttribSetID=3&UniversityID=2&ListingID=3920" --><title>Student Insider</title><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black"><link rel="apple-touch-icon" href="https://m.studentinsider.com/images/home-icon/StudentInsider-icon-iphone.png"><link rel="apple-touch-icon" sizes="72x72" href="https://m.studentinsider.com/images/home-icon/StudentInsider-icon-ipad.png"><link rel="apple-touch-icon" sizes="114x114" href="https://m.studentinsider.com/images/home-icon/StudentInsider-icon-iphone4.png"><link media="all" href="Student%20Insider-1_files/mobilenew.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/jquery.mobile-1.0.1.min.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/jqm-docs.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/add2home.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/jquery.safari-checkbox.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/jquery-ui.css" type="text/css" rel="stylesheet"><link media="all" href="Student%20Insider-1_files/jquery.filter-checkbox.css" type="text/css" rel="stylesheet"><link type="text/css" href="Student%20Insider-1_files/jqm-datebox.min.css" rel="stylesheet">
+
+
+
+
+
+	<script type="text/javascript" src="Student%20Insider-1_files/jquery-1.6.1.min.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.mobile-1.0.1.min.js"></script>
+	
+<script type="text/javascript" src="Student%20Insider-1_files/simple-inheritance.min.js"></script>
+	<script type="text/javascript" src="Student%20Insider-1_files/jquery.animate-enhanced.min.js"></script>	
+	<script type="text/javascript" src="Student%20Insider-1_files/code-photoswipe-jQuery-1.0.11.min.js"></script>
+
+<script type="text/javascript" src="Student%20Insider-1_files/add2home.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.mobile.themeswitcher.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.checkbox.min.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.ui.core.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.ui.datepicker.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.ui.datetimepicker.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/scroll-startstop.events.jquery.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.checkbox.min.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.ui.core.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.checkbox.min.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jquery.ui.core.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/NumberValidation.js"></script>
+<script type="text/javascript" src="Student%20Insider-1_files/jqbookmark.js"></script>
+
+
+
+	<link href="Student%20Insider-1_files/photoswipe.css" type="text/css" rel="stylesheet">
+
+	<style type="text/css">
+		div.gallery-row:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+		div.gallery-item { float: left; width: 33.333333%; }
+		div.gallery-item a { display: block; margin: 5px; border: 1px solid #3c3c3c; }
+		div.gallery-item img { display: block; width: 100%; height: auto; }
+		#Gallery1 .ui-content, #Gallery2 .ui-content { overflow: hidden; }
+	</style>
+
+
+<style type="text/css">
+    #ui-datepicker-div
+    {
+        width: 75%;
+    }
+</style>
+
+<script type="application/x-javascript">
+if (navigator.userAgent.indexOf('iPhone') != -1) {
+addEventListener("load", function() {
+setTimeout(hideURLbar, 0);
+}, false);
+}
+
+function hideURLbar() {
+window.scrollTo(0, 1);
+}
+
+function stopRKey(evt) {
+        var evt = (evt) ? evt : ((event) ? event : null);
+        var node = (evt.target) ? evt.target : ((evt.srcElement) ? evt.srcElement : null);
+        if ((evt.keyCode == 13) && ((node.type == "text") || (node.type == "checkbox"))) { return false; }
+    }
+    document.onkeypress = stopRKey;
+</script>
+
+
+
+<script type="text/javascript">
+    //    $.mobile.page.prototype.options.domCache = true;
+
+    $(document).live('pageinit', function (event) {
+        //        $('.NavButton').click(function () {
+        //            $('.NavigationDropdown').slideToggle(400);
+        //        });
+
+        var tbvalBusinessName = $('#txtBusinessName').val();
+
+        $('#txtBusinessName').focus(function () {
+            /*
+            if ($(this).val() == "" || $(this).val() == tbvalBusinessName)
+            $(this).val('');
+            */
+
+            $(this).filter(function () {
+                // We only want this to apply if there's not something actually entered
+                return $(this).val() == "" || $(this).val() == tbvalBusinessName;
+            }).removeClass("watermarkOn").val("");
+        });
+
+        $('#txtBusinessName').blur(function () {
+            /*
+            if ($(this).val() == '')
+            $(this).val(tbvalBusinessName);
+            */
+
+            $(this).filter(function () {
+                // We only want this to apply if there's not something actually entered
+                return $(this).val() == ""
+            }).addClass("watermarkOn").val(tbvalBusinessName);
+        });
+
+        var tbvalLocation = $('#txtLocation').val();
+        $('#txtLocation').focus(function () { $(this).val(''); });
+        $('#txtLocation').blur(function () {
+            if ($(this).val() == '')
+                $(this).val(tbvalLocation);
+        });
+        //$('#txtLocation').blur(function () { $(this).val(tbvalLocation); });
+
+        // $('input:checkbox').checkbox({ cls: 'jquery-safari-checkbox' });
+
+        // add a "rel" attrib if Opera 7+
+        if (window.opera) {
+            alert('opera1');
+            if ($("a.jqbookmark").attr("rel") != "") {
+                alert('jqbookmark');
+                $("a.jqbookmark").attr("rel", "sidebar");
+            }
+        }
+
+        $("a.jqbookmark").click(function (e) {
+            alert('jqbookmark1');
+            e.preventDefault(); // this will prevent the anchor tag from going the user off to the link
+            var bookmarkUrl = this.href;
+            var bookmarkTitle = this.title;
+
+            if (window.sidebar) { // For Mozilla Firefox Bookmark
+                window.sidebar.addPanel(bookmarkTitle, bookmarkUrl, "");
+            } else if (window.external || document.all) { // For IE Favorite
+                window.external.AddFavorite(bookmarkUrl, bookmarkTitle);
+            } else if (window.opera) { // For Opera Browsers
+                $("a.jqbookmark").attr("href", bookmarkUrl);
+                $("a.jqbookmark").attr("title", bookmarkTitle);
+                $("a.jqbookmark").attr("rel", "sidebar");
+            }
+            else {
+                alert('im in ELSE!');
+            }
+        });
+
+    });
+</script>
+    <script type="application/x-javascript">
+    if (navigator.userAgent.indexOf('iPhone') != -1) {
+        addEventListener("load", function() {
+        setTimeout(hideURLbar, 0);
+        }, false);
+    }
+
+    function hideURLbar() {
+        window.scrollTo(0, 1);
+    }
+    </script>
+</head>
+<body data-new-gr-c-s-check-loaded="8.906.0" data-gr-ext-installed="">
+    <form name="form1" method="post" action="./CouponDisplay.aspx?key=coupon&amp;AttribSetID=3&amp;UniversityID=2&amp;ListingID=3920" id="form1" class="ui-mobile-viewport">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="e0NwXsOjhceql/bPFEoX8TlTiN3ZvxzmNo0VNkuc/Z92CuUTGcpodtiiSHU2e1hWWb+XArdJfuZ1Ntr8RCv6j2vsrGUq0+uljQQnkiZv5qo=">
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['form1'];
+if (!theForm) {
+    theForm = document.form1;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="Student%20Insider-1_files/WebResource.js" type="text/javascript"></script>
+
+
+<script src="Student%20Insider-1_files/ScriptResource_002.js" type="text/javascript"></script>
+<script src="Student%20Insider-1_files/ScriptResource.js" type="text/javascript"></script>
+<script src="Student%20Insider-1_files/js.js" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="B4246965">
+</div>
+    <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ScriptManager1', 'form1', [], [], [], 90, '');
+//]]>
+</script>
+
+
+   <div data-role="page" class="Uni-ASU ui-page ui-body-c ui-page-active" data-url="/CouponDisplay.aspx?key=coupon&amp;AttribSetID=3&amp;UniversityID=2&amp;ListingID=3920" tabindex="0" style="">
+       <!--====================University Home Header====================-->
+       
+
+<div data-role="header" data-theme="f" class="ui-header ui-bar-f" role="banner">
+        <div class="HomeHeader">
+          <div class="TinyLogoSection"><div class="TinyLogo"></div> <div class="TinyLogoTxt"><span>Coupons</span></div></div>
+        </div>
+        <div data-content-theme="a" data-theme="a" data-role="collapsible" class="NavButton ui-collapsible ui-collapsible-collapsed"><h4 class="ui-collapsible-heading ui-collapsible-heading-collapsed"><a href="#" class="ui-collapsible-heading-toggle ui-btn ui-btn-up-a ui-corner-top ui-corner-bottom" data-theme="a"><span class="ui-btn-inner ui-corner-top ui-corner-bottom"><span class="ui-btn-text"><span class="ui-collapsible-heading-status"> click to expand contents</span></span></span></a></h4><div class="ui-collapsible-content ui-body-a ui-collapsible-content-collapsed" aria-hidden="true">
+                                  
+                                 <!--=======================NAVIGATION dROPDOWN=======================-->
+                                 <div class="NavigationDropdown"><ul><li><a href="https://m.studentinsider.com/SchoolHome.aspx?UniversityID=2" rel="external" class="ui-link"><img src="Student%20Insider-1_files/Nav-Arrow.png"><div class="clear"></div>Home</a></li><li><a rel="external" href="https://m.studentinsider.com/Coupon.aspx?AttribSetID=2&amp;key=coupon&amp;UniversityID=2" class="ui-link"><img src="Student%20Insider-1_files/Nav-Dollar.png"><div class="clear"></div>Coupons</a></li><li><a rel="external" href="https://m.studentinsider.com/Events.aspx?AttribSetID=10&amp;key=events&amp;UniversityID=2" class="ui-link"><img src="Student%20Insider-1_files/Nav-Calendar.png"><div class="clear"></div>Events</a></li><li><a class="Middle-Img ui-link" rel="external" href="https://m.studentinsider.com/index.aspx"><div class="clear"></div><img src="Student%20Insider-1_files/Nav-ChangeSchool.png"></a></li></ul></div>
+            
+</div></div>
+<a href="" class="ui-btn-left ui-btn ui-btn-up-f ui-btn-corner-all ui-shadow" data-theme="f"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text"></span></span></a>
+</div>
+
+       <!--====================University Home Container====================-->
+       <div data-role="content" class="ui-content" role="main">
+          <div class="HomeContainer">
+            <script type="text/javascript">
+                $('#hdnClientDateTime').val(new Date());
+
+                function OpenCouponFacebook(varAttribSetID, varCouponID, varAdvertiserID) {
+                    // Get Bitly URL
+                    wbsStudentInsider.FB_GetBitlyUrlWS_Mobile($('#hdnUniversityID').val(), varAttribSetID, varCouponID, varAdvertiserID, true, FB_OnBitlyUrlSuccess);
+                }
+
+                function OpenEventFacebook(varAttribSetID, varCouponID, varAdvertiserID) {
+                    // Get Bitly URL
+                    wbsStudentInsider.FB_GetBitlyUrlWS_Mobile($('#hdnUniversityID').val(), varAttribSetID, varCouponID, varAdvertiserID, false, FB_OnBitlyUrlSuccess);
+                }
+
+                function OpenCouponTwitter(varAttribSetID, varCouponID, varAdvertiserID, varUniversity, varOffer, AdvertisersName) {
+                    // Get Bitly URL
+                    wbsStudentInsider.TW_GetBitlyUrlWS_Mobile($('#hdnUniversityID').val(), varAttribSetID, varCouponID, varAdvertiserID, varUniversity, varOffer, AdvertisersName, true, TW_OnBitlyUrlSuccess);
+                }
+
+                function OpenEventTwitter(varAttribSetID, varCouponID, varAdvertiserID, varUniversity, varOffer, AdvertisersName) {
+                    // Get Bitly URL
+                    wbsStudentInsider.TW_GetBitlyUrlWS_Mobile($('#hdnUniversityID').val(), varAttribSetID, varCouponID, varAdvertiserID, varUniversity, varOffer, AdvertisersName, false, TW_OnBitlyUrlSuccess);
+                }
+
+                function OpenWebsite(varCouponID, varWebsite) {
+                    wbsStudentInsider.OpenWebSiteWS_Mobile($('#hdnUniversityID').val(), varCouponID, varWebsite, OnRetOpenWebsite);
+                }
+
+                function OpenGMapURL(varCouponID, varGMapURL) {
+                    wbsStudentInsider.OpenGMapURLWS_Mobile($('#hdnUniversityID').val(), varCouponID, varGMapURL, OnRetOpenGMapURL);
+                }
+
+                function FB_OnBitlyUrlSuccess(result) {
+                    // window.open(result, 'Facebook');
+                    // $.mobile.loadPage(result, { transition: "slideup" });
+
+                    window.location.href = result;
+                }
+
+                function TW_OnBitlyUrlSuccess(result) {
+                    // window.open(result, 'Twitter');
+                    // $.mobile.loadPage(result, { transition: "slideup" });
+
+                    window.location.href = result;
+                }
+
+                function OnRetOpenWebsite(result) {
+                    // window.open(result, 'Website');
+                    // $.mobile.loadPage(result, { transition: "slideup" });
+
+                    window.location.href = result;
+                }
+
+                function OnRetOpenGMapURL(result) {
+                    // window.open(result, 'GMapURL');
+                    // $.mobile.loadPage(result, { transition: "slideup" });
+
+                    window.location.href = result;
+                }
+                </script>
+
+                <div class="InsideContent">
+                    <input type="hidden" name="hdnUniversityID" id="hdnUniversityID" value="2">
+                    <input type="hidden" name="hdnCachedDateTime" id="hdnCachedDateTime" value="8/19/2023 1:58:52 PM">
+                    <input type="hidden" name="hdnClassDateTime" id="hdnClassDateTime" value="8/19/2023 1:58:53 PM">
+                    <input type="hidden" name="hdnClientDateTime" id="hdnClientDateTime">
+                    <div class="clear-fx"></div>
+                    <div class="ListingBar DiningBar">Dining Guide</div><div class="AdvertiseListing"><div class="AdvertiseListingLeft"><h2>Berry Divine Acai Bowls</h2><p>960 N. Scottsdale Rd., Tempe<br>(480) 967-0942</p><p><a href="https://www.berrydivineacai.com/" class="ui-link">www.berrydivineacai.com</a></p><p><a href="https://www.facebook.com/berrydivineacai" class="ui-link">www.facebook.com/berrydivineacai</a></p><p><a href="https://" class="ui-link"></a></p></div><div class="AdvertiseListingRight"><a href="https://m.studentinsider.com/ListingDisplay.aspx?AttribSetID=3&amp;UniversityID=2&amp;ListingID=3920" class="ui-link"><img src="Student%20Insider-1_files/3920.jpg"></a></div><div class="line-fx"></div><div class="clear-fx"></div><p>Awarded
+ “ BEST ACAI BOWLS IN PHOENIX”, Berry Divine offers its Healthy and 
+Delicious Soft Serve acai in a variety of topping combinations, all 
+created with the freshest fruits, granola, and Superfoods. Beloved by 
+their legion of fans, Berry Divine’s own unique acai combines 100% 
+premium organic acai with all organic juices, providing the industry’s 
+most amazing acai flavor profile. Simply the best acai bowl you’ve ever 
+tasted. The perfect Healthy meal alternative, for any time of day or 
+night! Enjoy at additional BD locations in Gilbert, AZ, Scottsdale, AZ, 
+Phoenix, AZ, Sedona, AZ, Tucson, AZ, Phoenix Sky Harbor Airport, and 
+South Padre Island, TX. The Tempe location is open 7:30am to 10:00pm 
+daily. Order online: orderberrydivineacai.com.</p></div><div class="clear-fx"></div><ul class="LegendWidth"><li><img src="Student%20Insider-1_files/Casual.png">$6 - $10</li><li><img src="Student%20Insider-1_files/BreakFastIco.png">Breakfast</li><li><img src="Student%20Insider-1_files/LunchIco.png">Lunch</li><li><img src="Student%20Insider-1_files/DinnerIco.png">Dinner</li><li><img src="Student%20Insider-1_files/TakeOutIco.png">Take Out</li><li><img src="Student%20Insider-1_files/CateringIco.png">Catering</li><li><img src="Student%20Insider-1_files/TakeDateIco.png">Take A Date</li><li><img src="Student%20Insider-1_files/OpenLate.png">Open Late</li><li><img src="Student%20Insider-1_files/TelevisionIco.png">Televisions</li><li><img src="Student%20Insider-1_files/Wifi.png">WiFi</li><li><img src="Student%20Insider-1_files/CreditCardsIco.png">Credit Cards</li></ul><div class="clear-fx"></div><br><div class="clear-fx"></div><div class="clear-fx"></div><div class="CouponContainer colorCoupons DiningCoupon"><div class="CouponHeading"><h1><a href="https://m.studentinsider.com/ListingDisplay.aspx?AttribSetID=3&amp;UniversityID=2&amp;ListingID=3920" class="ui-link">$2 OFF ANY PURCHASE OF $10 OR MORE</a></h1></div><div class="CouponContainerLeft"><span></span></div><ul class="CouponContainerRight"><li><img src="Student%20Insider-1_files/DIN.jpg" class="CouponLogo"><p>SAVE
+ $2 OFF ANY PURCHASE OF $10 OR MORE. Not valid with any other offer. 
+In-store purchases only (not valid for online orders). 1 coupon per 
+pers... Expires 12/31/2023.<br>Coupon Code : ASU2239. </p><div class="clear"></div></li><li class="CouponMiddleRow"><a onclick="return false" class="ui-link"><img src="Student%20Insider-1_files/3920.jpg" class="CouponCompanyLogo"></a><p>Berry Divine Acai Bowls<br>960 N. Scottsdale Rd.<br>Tempe, AZ 85281<br>(480) 967-0942</p></li><li><div class="CouponOptions"><a href="https://m.studentinsider.com/CouponPrint.aspx?cid=5906&amp;UniversityID=2&amp;keepThis=true&amp;TB_iframe=true&amp;height=405&amp;width=672" title="Reedem Coupon" class="thickbox ui-link"><div class="ReedemIcon"></div></a><a href="https://m.studentinsider.com/CouponEMail.aspx?cid=5906&amp;UniversityID=2&amp;keepThis=true&amp;TB_iframe=true&amp;height=100&amp;width=380" title="Send Email" class="thickbox ui-link"><img src="Student%20Insider-1_files/email.jpg"></a><a href="javascript:OpenCouponFacebook('3','5906','3920');" class="ui-link"><img src="Student%20Insider-1_files/facebook.jpg"></a><a href="javascript:OpenCouponTwitter('3','5906','3920','Arizona State University','$2 OFF ANY PURCHASE OF $10 OR MORE','Berry Divine Acai Bowls');" class="ui-link"><img src="Student%20Insider-1_files/twitter.jpg"></a><a href="javascript:OpenWebsite('5906','www.berrydivineacai.com');" class="ui-link"><img src="Student%20Insider-1_files/website.jpg"></a><a href="javascript:OpenGMapURL('5906','https://maps.google.com/maps?li=d&amp;hl=en&amp;f=d&amp;iwstate1=dir:to&amp;daddr=960 N. Scottsdale Rd., Tempe, AZ 85281 (Berry Divine Acai Bowls)');" class="ui-link"><img src="Student%20Insider-1_files/mapit.jpg"></a></div></li></ul></div>
+                
+                    
+                </div>
+            </div>
+       </div>
+
+        <!--====================University Footer====================-->
+         <div data-role="footer" data-theme="a" class="ui-footer ui-bar-a" role="contentinfo">
+            
+
+
+
+<div class="CopyRight">
+    <p>© 2023 The Bernstein Group, Inc. All Rights Reserved.</p>
+    <p>Student Insider is not affiliated with Arizona State University.</p>
+</div>
+<div class="clear"></div>
+<div class="BottomBit">
+    <ul>
+        
+        <li><a href="https://m.studentinsider.com/index.aspx" class="ui-link"><img src="Student%20Insider-1_files/FooterChangeSchoolBut.png"></a></li>
+    </ul>
+</div>
+        </div>
+
+
+    
+
+
+</div><div class="ui-loader ui-body-a ui-corner-all" style="top: 519.5px;"><span class="ui-icon ui-icon-loading spin"></span><h1>loading</h1></div></form></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
